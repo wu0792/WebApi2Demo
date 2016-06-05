@@ -24,9 +24,11 @@ namespace WebApi2Demo.Models
             {
                 Contact contact1 = new Contact
                 {
+                    Id = index.ToString(),
                     Email = string.Format("test{0}@example.com", index),
                     Name = string.Format("test{0}", index),
-                    Phone = string.Format("{0}{0}{0} {0}{0}{0} {0}{0}{0}{0}", index)
+                    Phone = string.Format("{0}{0}{0} {0}{0}{0} {0}{0}{0}{0}", index),
+                    LastModified = DateTime.Now.AddDays(-1 * index)
                 };
                 AddContact(contact1);
             }
