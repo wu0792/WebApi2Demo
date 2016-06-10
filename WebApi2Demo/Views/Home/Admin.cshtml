@@ -33,7 +33,9 @@
                   .done(function () { self.products.remove(product); });
           }
 
-          $.getJSON(baseUri, self.products);
+          $.getJSON(baseUri, function (data) {
+              self.products(data);
+          });
       }
 
       $(document).ready(function () {
